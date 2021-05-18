@@ -33,7 +33,7 @@ function generatePassword(){
   var currentPwLength = 0;
 
     // Generate pop-ups once function is run
-    let pwLength = prompt("Do you want your password to contain lower letters? 8-128");
+    let pwLength = prompt("How many characters do you want your password to be? 8-128");
 
     // Check if entered value is less than 8, more than 128, blank, or a string text, like "ten"
     // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
@@ -64,7 +64,7 @@ function generatePassword(){
       currentPwLength += 1;
     }
 
-    let number = prompt("Do you want your password to contain lower letters? yes/no");
+    let number = prompt("Do you want your password to contain numbers? yes/no");
     if (number.toLowerCase() == "yes") {
       const getRandomNumber = Math.floor(Math.random() * numberArray.length);
       passwordText.push(numberArray[getRandomNumber]);
@@ -72,7 +72,7 @@ function generatePassword(){
       currentPwLength += 1;
     }
 
-    let special = prompt("Do you want your password to contain lower letters? yes/no");
+    let special = prompt("Do you want your password to contain special characters? yes/no");
     if (special.toLowerCase() == "yes") {
       const getRandomSpecial = Math.floor(Math.random() * specialArray.length);
       passwordText.push(specialArray[getRandomSpecial]);
