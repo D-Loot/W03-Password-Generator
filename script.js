@@ -79,6 +79,17 @@ function generatePassword(){
       pwArraySelection.push(...specialArray);
       currentPwLength += 1;
     }
+    
+    console.log("lowerLetter: "+lowerLetter);
+    console.log("upperLetter: "+upperLetter);
+    console.log("number: "+number);
+    console.log("special: "+special);
+
+    // If the user declines all of the character types, an error message will pop up indicating that at least one type will be required and the password will be returned as a blank string
+    if (lowerLetter.toLowerCase() !== "yes" && upperLetter.toLowerCase() !== "yes" && number.toLowerCase() !== "yes" && special.toLowerCase() !== "yes"){
+      alert("Please select at least one of the character types: Lowercase Letter, Uppercase Letter, Number, or Special Character")
+      return password = "";
+    }
 
   // varify that the type of character is allowed based on questions asked in the pop-ups
   for (i=currentPwLength; i<pwLength;i++){
@@ -87,5 +98,5 @@ function generatePassword(){
   }
   // Return the variable "passwordText" that has been created in the function to "password" in the writePassword function
   // Reference: https://www.w3schools.com/jsref/jsref_join.asp  
-  return password = passwordText.join("")
+  return password = passwordText.join("");
 }
